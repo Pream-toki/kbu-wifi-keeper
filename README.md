@@ -1,34 +1,26 @@
 # KBU Wi-Fi Keeper
 
-Campus wifi here (KBU.WIFI / KBU.FL7) dumps you every so often and makes you type the portal login again. This is a small Windows tray app that notices when the session dies and signs you back in. No extra window, no reconnecting the adapter, so Zoom/Chrome just keep going.
+Campus wifi (KBU.WIFI / KBU.FL7) times out and asks for login again. This sits in the tray and signs you back in. It does **not** disconnect wifi, so other apps keep running.
 
-Two networks, two accounts. Right-click the green icon for ON/OFF.
+## Setup (once)
 
-## What it actually does
+1. Install [Python 3](https://www.python.org/downloads/) for Windows. Tick **Add python.exe to PATH**.
+2. Copy `config.example.json` to `config.json`.
+3. Put **your** usernames and passwords in `config.json`. Two networks = two accounts.
+4. Double-click `START.bat`. First run may install packages; wait a few seconds.
+5. Look in the tray (hidden-icons `^` if you don’t see a green circle).
 
-- Watches the current SSID (`netsh`)
-- If you’re on one of the two KBU networks, pokes a connectivity URL every ~20s
-- If a captive portal ate the request, it posts that network’s username/password
-- Failures stay in `keeper.log`. It doesn’t pop error boxes.
+`config.json` stays on your laptop. Do not commit it. Do not paste passwords into GitHub issues.
 
-## Run (Windows)
+## Use
 
-Python 3, then:
+Right-click the green icon:
 
-```
-copy config.example.json config.json
-```
+- **Keeper ON / OFF** — pause without quitting
+- **Start with Windows** — only if you want it after reboot (click again to turn that off)
+- **Open settings (accounts)** — edits `config.json`
+- **Quit** — fully stops it
 
-Put your real logins in `config.json` (that file is gitignored on purpose).
+If login fails, open `keeper.log` in this folder. The school may have changed the portal page.
 
-```
-START.bat
-```
-
-Tray: **Keeper ON / OFF**, **Start with Windows** (check/uncheck yourself), **Open settings**, **Quit**.
-
-## Notes
-
-- This is just HTTP login against the portal, not a wifi cracker.
-- If the school changes the login page, check `keeper.log` and we can tweak the form submit.
-- Built for my own laptop because I got tired of the timeout mid-class.
+This only talks to the captive portal with **your** account. It is not a wifi hack.
