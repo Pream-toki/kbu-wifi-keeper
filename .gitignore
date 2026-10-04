@@ -1,0 +1,7 @@
+config.json
+keeper.log
+.ohmyagent/
+__pycache__/
+*.pyc
+.venv/
+_check.py

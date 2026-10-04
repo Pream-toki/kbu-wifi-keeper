@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "check_seconds": 20,
+  "networks": {
+    "KBU.WIFI": {
+      "username": "your-id",
+      "password": "your-password"
+    },
+    "KBU.FL7": {
+      "username": "your-id",
+      "password": "your-password"
+    }
+  }
+}
