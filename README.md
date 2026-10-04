@@ -25,9 +25,7 @@ Put your real logins in `config.json` (that file is gitignored on purpose).
 START.bat
 ```
 
-or `install_startup.bat` if you want it after reboot.
-
-Tray: **Keeper ON / OFF**, **Open settings**, **Quit**.
+Tray: **Keeper ON / OFF**, **Start with Windows** (check/uncheck yourself), **Open settings**, **Quit**.
 
 ## Notes
 
